@@ -1,8 +1,8 @@
 run:
-	npx zenn preview
+	npx zenn preview --open
 
 art:
-	npx zenn new:article
+	npx zenn new:article --machine-readable | xargs code
 
 book:
 	npx zenn new:book
