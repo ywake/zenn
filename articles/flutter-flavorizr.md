@@ -39,10 +39,9 @@ flavors:
       bundleId: "com.example.app-name.dev"
       firebase:
         config: ".firebase/dev/GoogleService-Info.plist"
-    macos:
-      bundleId: "com.example.app-name.dev"
-      firebase:
-        config: ".firebase/dev/GoogleService-Info.plist"
+      variables:
+        REVERSED_CLIENT_ID:
+          value: "YOUR REVERSED CLIENT ID"
   prod:
     app:
       name: "AppName"
@@ -54,11 +53,12 @@ flavors:
       bundleId: "com.example.app-name"
       firebase:
         config: ".firebase/prod/GoogleService-Info.plist"
-    macos:
-      bundleId: "com.example.app-name"
-      firebase:
-        config: ".firebase/prod/GoogleService-Info.plist"
+      variables:
+        REVERSED_CLIENT_ID:
+          value: "YOUR REVERSED CLIENT ID"
 ```
+[FirebaseAuthのGoogleSignInの設定](https://zenn.dev/wake/articles/0d41c27f6441a4#google-sign-in)でどうせつかうので、例も兼ねて`REVERSED_CLIENT_ID`を設定しています。
+Info.plist内で`$(REVERSED_CLIENT_ID)`と書けば使えます。
 
 # 3. GoogleServiceファイルを設置
 ```sh
