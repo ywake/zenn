@@ -26,7 +26,7 @@ gem install xcodeproj
 
 # 2. `flavorizr.yaml`の設定
 ```yaml
-ide: "vscode"
+ide: "vscode" # or 'idea', .vscode/launch.jsonを作ってくれます。
 flavors:
   dev:
     app:
@@ -59,6 +59,8 @@ flavors:
 ```
 [FirebaseAuthのGoogleSignInの設定](https://zenn.dev/wake/articles/0d41c27f6441a4#google-sign-in)でどうせつかうので、例も兼ねて`REVERSED_CLIENT_ID`を設定しています。
 Info.plist内で`$(REVERSED_CLIENT_ID)`と書けば使えます。
+
+Firebaseが不要の場合は`firebase:`や`variables:`は要りません。また、以下の手順3~5も不要です。
 
 # 3. GoogleServiceファイルを設置
 ```sh
