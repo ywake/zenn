@@ -32,30 +32,30 @@ flavors:
     app:
       name: "[Dev]AppName"
     android:
-      applicationId: "dev.drdng.app_name.dev"
+      applicationId: "com.example.app_name.dev"
       firebase:
         config: ".firebase/dev/google-services.json"
     ios:
-      bundleId: "dev.drdng.app-name.dev"
+      bundleId: "com.example.app-name.dev"
       firebase:
         config: ".firebase/dev/GoogleService-Info.plist"
     macos:
-      bundleId: "dev.drdng.app-name.dev"
+      bundleId: "com.example.app-name.dev"
       firebase:
         config: ".firebase/dev/GoogleService-Info.plist"
   prod:
     app:
       name: "AppName"
     android:
-      applicationId: "dev.drdng.app_name"
+      applicationId: "com.example.app_name"
       firebase:
         config: ".firebase/prod/google-services.json"
     ios:
-      bundleId: "dev.drdng.app-name"
+      bundleId: "com.example.app-name"
       firebase:
         config: ".firebase/prod/GoogleService-Info.plist"
     macos:
-      bundleId: "dev.drdng.app-name"
+      bundleId: "com.example.app-name"
       firebase:
         config: ".firebase/prod/GoogleService-Info.plist"
 ```
