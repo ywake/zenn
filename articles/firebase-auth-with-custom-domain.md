@@ -13,28 +13,28 @@ Firebase Authenticationではメールアドレスの確認やパスワードの
 
 今回はFirebaseのドメインではなく独自ドメインを使う方法を簡単に紹介します。
 
-# メールアドレスをカスタマイズ
+# A. メールアドレスをカスタマイズ
 こちらは簡単です。  
 `Authentication` → `Template` → `メールアドレスの確認` など → 🖊アイコン（テンプレートを編集） → `ドメインをカスタマイズ`  
 から指示に従えばOKです。  
 
 http://zenn.dev/wake/articles/your-own-domain-mail-address-for-free
 
-# メール内のリンク（アクションURL）をカスタマイズ
+# B. メール内のリンク（アクションURL）をカスタマイズ
 こちらは検索しても出てくる情報がバラバラだったので、私が試してうまく行った方法を紹介します。  
 参考  
 https://stackoverflow.com/questions/46972194/how-to-customize-firebase-action-url-for-password-reset-and-email-verification
 
 ここでは大体3つの方法が紹介されていました。
-* Dynamic Linksを設定してから、アクションURLを設定する
-	* 2番目の方法を内包している上、サポート終了が予定されているので微妙
-* ✅ Hostingにカスタムドメインを設定してから、アクションURLを設定する
-* ❌ DNSを設定してから、アクションURLを設定する
+1. ❌ Dynamic Linksを設定してから、アクションURLを設定する
+	* 2番目の方法を使わず、いきなりDynamic Linksは設定できませんでした。
+1. ✅ Hostingにカスタムドメインを設定してから、アクションURLを設定する
+1. ❌ DNSを設定してから、アクションURLを設定する
 	* `ERR_CERT_COMMON_NAME_INVALID`となってしまいます
 
 2番目の方法でうまくいったので、こちらを紹介します。  
 
-## Hostingにカスタムドメインを設定
+## 1. Hostingにカスタムドメインを設定
 `Hosting` → `ダッシュボード` → `カスタムドメインを追加`と進み、指示に従うだけです。  
 * 「`yourdomain` を既存のウェブサイトにリダイレクトする」はチェックしなくて大丈夫です。  
 * セットアップモードは「クイックセットアップ」で大丈夫です  
@@ -45,7 +45,7 @@ https://stackoverflow.com/questions/46972194/how-to-customize-firebase-action-ur
 10~20分かかりました。
 :::
 
-## アクションURLをカスタマイズ
+## 2. アクションURLをカスタマイズ
 ダッシュボード上の表示が「接続されました」になったら、  
 `Authentication` → `テンプレート` → `メールアドレスの確認` など → 🖊アイコン（テンプレートを編集） → `アクションURLをカスタマイズ` で
 ```
