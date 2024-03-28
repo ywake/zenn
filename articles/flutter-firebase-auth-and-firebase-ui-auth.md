@@ -152,3 +152,12 @@ SignInScreen(
   ],
 );
 ```
+
+---
+
+# 関連記事
+* [flutter_flavorizrでFlutter+Firebaseの環境を分ける](https://zenn.dev/wake/articles/flutter-flavorizr)
+* [FlutterでFirebaseのメールリンク認証を使う](https://zenn.dev/wake/articles/flutter-firebase-auth-with-email-link)
+* [FirebaseAuthで独自ドメインを使う](https://zenn.dev/wake/articles/firebase-auth-with-custom-domain)
+* [Cloud Firestore ODMでサーバータイムスタンプを使う方法](https://zenn.dev/wake/articles/flutter-firestore-odm-with-server-timestamp)
+* [FlutterのバックグラウンドでFirebaseと通信(iOS)](https://zenn.dev/wake/articles/572fdd292ed482e6b5bc)

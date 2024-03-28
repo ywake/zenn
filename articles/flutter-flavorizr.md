@@ -217,3 +217,12 @@ E/flutter ( 5091): , null)
 ```
 というエラーが出た場合はAndroidのための設定を忘れているか、`com.google.gms:google-services`のバージョンが高すぎる可能性があります。
 記事執筆時点での最新は`4.4.1`ですが、`4.3.8`なら問題なく動作しました。（`4.4.0`,`4.3.9`は同様のエラーとなりました。）
+
+---
+
+# 関連記事
+* [FlutterでFirebaseAuth+FirebaseUIAuthを設定する手順](https://zenn.dev/wake/articles/flutter-firebase-auth-and-firebase-ui-auth)
+* [FlutterでFirebaseのメールリンク認証を使う](https://zenn.dev/wake/articles/flutter-firebase-auth-with-email-link)
+* [FirebaseAuthで独自ドメインを使う](https://zenn.dev/wake/articles/firebase-auth-with-custom-domain)
+* [Cloud Firestore ODMでサーバータイムスタンプを使う方法](https://zenn.dev/wake/articles/flutter-firestore-odm-with-server-timestamp)
+* [FlutterのバックグラウンドでFirebaseと通信(iOS)](https://zenn.dev/wake/articles/572fdd292ed482e6b5bc)

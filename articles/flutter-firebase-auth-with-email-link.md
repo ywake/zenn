@@ -145,3 +145,12 @@ CDNに反映されたあとはmode戻した方が良いんですかね？
 ### リンクがアプリで開かない（Android）
 私はまだ直面していませんが、見かけたので貼っておきます。
 https://zenn.dev/yskuue/articles/b6e449fb9bd99d
+
+---
+
+# 関連記事
+* [flutter_flavorizrでFlutter+Firebaseの環境を分ける](https://zenn.dev/wake/articles/flutter-flavorizr)
+* [FlutterでFirebaseAuth+FirebaseUIAuthを設定する手順](https://zenn.dev/wake/articles/flutter-firebase-auth-and-firebase-ui-auth)
+* [FirebaseAuthで独自ドメインを使う](https://zenn.dev/wake/articles/firebase-auth-with-custom-domain)
+* [Cloud Firestore ODMでサーバータイムスタンプを使う方法](https://zenn.dev/wake/articles/flutter-firestore-odm-with-server-timestamp)
+* [FlutterのバックグラウンドでFirebaseと通信(iOS)](https://zenn.dev/wake/articles/572fdd292ed482e6b5bc)
