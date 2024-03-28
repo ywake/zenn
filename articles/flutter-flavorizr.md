@@ -215,7 +215,7 @@ E/flutter ( 5091): 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Thread
 E/flutter ( 5091): 	at java.lang.Thread.run(Thread.java:923)
 E/flutter ( 5091): , null)
 ```
-というエラーが出た場合はAndroidのための設定を忘れているか、`com.google.gms:google-services`のバージョンが高すぎる可能性があります。
+というエラーが出た場合は[Androidのための設定](#4.-androidのための設定)を忘れているか、`com.google.gms:google-services`のバージョンが高すぎる可能性があります。
 記事執筆時点での最新は`4.4.1`ですが、`4.3.8`なら問題なく動作しました。（`4.4.0`,`4.3.9`は同様のエラーとなりました。）
 
 ---
