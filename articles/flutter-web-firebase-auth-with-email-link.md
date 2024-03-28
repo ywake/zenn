@@ -19,7 +19,7 @@ published: true
 1. 1のURLを処理できるように`go_router`等を設定します。
 1. URLを受け取った後のログイン処理を行います。
 
-# I. EmailLinkのリダイレクト先を設定する
+# 1. EmailLinkのリダイレクト先を設定する
 [前回の🎯Flutterの実装](https://zenn.dev/wake/articles/flutter-firebase-auth-with-email-link#iii.-🎯Flutterの実装)で設定した`ActionCodeSettings`のurlを変更します。
 ```dart diff
  final origin = kDebugMode
@@ -36,7 +36,7 @@ published: true
 一応デバッグ時は`localhost`を使うようにしています。ポートは好きにしてください。
 ただし、`flutter run`する時、デフォルトではポートがランダムなので`--web-port 8081`等で指定する必要があります。
 
-# II. 入力されたメールアドレスを一時的に保存する
+# 2. 入力されたメールアドレスを一時的に保存する
 * 保存には`shared_preferences`を使います。（shared_preferencesの使い方は本稿では省略します）
 * 入力されたメールアドレスを受け取る必要があります。
 	* 今回は簡単に`firebase_ui_auth`の`EmailLinkSignInScreen`を弄って使います。
@@ -83,7 +83,7 @@ class EmailLinkView extends StatelessWidget {
 }
 ```
 
-# III. URLを処理できるようにする
+# 3. URLを処理できるようにする
 今回は`go_router`を使ってURLを処理できるようにします。(これも基本的な解説は省略します)
 （ちなみにバージョンは`13.x.x`を想定しています。APIの更新早いので変わっているかもしれません）
 
@@ -121,7 +121,7 @@ void main() {
 (もっと良いやり方あったら教えてください！)
 :::
 
-# IV. ログイン処理を行う
+# 4. ログイン処理を行う
 ここまで設定すれば、送られてきたメールリンクをブラウザで開くと`your-domain.com/login/finish`に飛ぶはずですので、あとはそのページでログイン処理を行います。
 
 > 概要を示すための適当なコードなので、適宜修正してください。
@@ -159,7 +159,7 @@ class FinishLogin extends StatelessWidget {
 ```
 go_routerから持ってきた「URL」と、SharedPreferencesに保存した「入力されたメールアドレス」を`FirebaseAuth.instance.signInWithEmailLink()`に渡してログイン処理を行います。
 
-# V. 終わり🎉
+# 5. 終わり🎉
 お疲れ様でした！
 いつかfirebase_ui_authでサポートされて簡単になることを願っています。
 

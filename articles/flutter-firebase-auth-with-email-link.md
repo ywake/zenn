@@ -115,7 +115,7 @@ SignInScreen(
 お疲れ様でした！
 
 FlutterWebでのメールリンク認証についても書きました↓
-[FlutterWebでFirebaseのメールリンク認証を使う](https://zenn.dev/wake/articles/flutter-web-firebase-auth-with-email-link)
+https://zenn.dev/wake/articles/flutter-web-firebase-auth-with-email-link
 
 ---
 
