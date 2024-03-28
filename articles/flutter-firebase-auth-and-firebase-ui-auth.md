@@ -15,6 +15,7 @@ published: true
 * pub.dev
 	- [firebase_auth](https://pub.dev/packages/firebase_auth)
 	- [firebase_ui_auth](https://pub.dev/packages/firebase_ui_auth)
+	- [firebase_ui_localizations](https://pub.dev/packages/firebase_ui_localizations)
 
 # インストール
 
