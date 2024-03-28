@@ -152,6 +152,7 @@ https://zenn.dev/yskuue/articles/b6e449fb9bd99d
 ---
 
 # 関連記事
+* [FlutterWebでFirebaseのメールリンク認証を使う](https://zenn.dev/wake/articles/flutter-web-firebase-auth-with-email-link)
 * [flutter_flavorizrでFlutter+Firebaseの環境を分ける](https://zenn.dev/wake/articles/flutter-flavorizr)
 * [FlutterでFirebaseAuth+FirebaseUIAuthを設定する手順](https://zenn.dev/wake/articles/flutter-firebase-auth-and-firebase-ui-auth)
 * [FirebaseAuthで独自ドメインを使う](https://zenn.dev/wake/articles/firebase-auth-with-custom-domain)
