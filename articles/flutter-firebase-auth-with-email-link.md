@@ -40,7 +40,7 @@ Flutterで[firebase_auth](https://pub.dev/packages/firebase_auth)と[firebase_ui
 
 # II. 🎯Flutterプロジェクトの設定
 ## a. 依存関係のインストール
-https://zenn.dev/wake/articles/0d41c27f6441a4
+https://zenn.dev/wake/articles/flutter-firebase-auth-and-firebase-ui-auth
 
 ## b. iOSの設定
 1. Xcode → **TARGETS**下の`Runner` → `Signing & Capabilities` → `+ Capability` から`Associated Domains`を追加し、`Domains`に以下を追加します。

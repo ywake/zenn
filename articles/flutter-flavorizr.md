@@ -57,7 +57,7 @@ flavors:
         REVERSED_CLIENT_ID:
           value: "YOUR REVERSED CLIENT ID"
 ```
-[FirebaseAuthのGoogleSignInの設定](https://zenn.dev/wake/articles/0d41c27f6441a4#google-sign-in)でどうせつかうので、例も兼ねて`REVERSED_CLIENT_ID`を設定しています。
+[FirebaseAuthのGoogleSignInの設定](https://zenn.dev/wake/articles/flutter-firebase-auth-and-firebase-ui-auth#google-sign-in)でどうせつかうので、例も兼ねて`REVERSED_CLIENT_ID`を設定しています。
 Info.plist内で`$(REVERSED_CLIENT_ID)`と書けば使えます。
 
 Firebaseが不要の場合は`firebase:`や`variables:`は要りません。また、以下の手順3~5も不要です。
@@ -67,6 +67,16 @@ Firebaseが不要の場合は`firebase:`や`variables:`は要りません。ま�
 mkdir -p .firebase/dev .firebase/prod
 ```
 `GoogleService-Info.plist`と`google-services.json`をそれぞれ設置します。
+
+```
+.firebase/
+├── dev
+│   ├── GoogleService-Info.plist
+│   └── google-services.json
+└── prod
+    ├── GoogleService-Info.plist
+    └── google-services.json
+```
 
 # 4. Androidのための設定
 CLIを使った最新の設定ドキュメントからは無くなってしまったかもしれませんが、[昔のドキュメント](https://firebase.flutter.dev/docs/manual-installation/android/)では弄る場所が記載されています。
