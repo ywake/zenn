@@ -114,6 +114,9 @@ SignInScreen(
 # IV. 終わり🎉
 お疲れ様でした！
 
+メールの送信アドレスをカスタマイズしたい場合は[こちら](https://zenn.dev/wake/articles/firebase-auth-with-custom-domain#a.-メールアドレスをカスタマイズ)を参考にしてください。
+メールリンクのテンプレートはなぜか提供されていないので、メール内容や送信者名を変更することはできませんが、どのテンプレートでもいいので送信元を1つ変えると全部それになります。
+
 FlutterWebでのメールリンク認証についても書きました↓
 https://zenn.dev/wake/articles/flutter-web-firebase-auth-with-email-link
 
