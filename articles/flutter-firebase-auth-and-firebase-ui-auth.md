@@ -61,11 +61,18 @@ flutter pub add firebase_ui_oauth_google
 
 ### Firebaseの設定
 Firebaseのコンソール上でAuthenticationのログインプロバイダにGoogleを追加します。
-* Android用にSHA-1の設定が必要です。
+* Android用にSHA-1の設定が必要なので下の項目で説明します。
 * iOS用にはGoogleService-Info.plistを更新する必要があります。
 
 ### Android用設定
-特に設定することはありません。
+1. SHA-1の設定
+	```bash
+	keytool -list -v -keystore ~/.android/debug.keystore -alias androiddebugkey -storepass android -keypass android
+	```
+	で取得したSHA-1をFirebaseのAndroidアプリに登録します。
+1. [OAuth同意画面](https://console.developers.google.com/apis/credentials/consent)の必須項目を設定します。
+	* `デベロッパーの連絡先情報`が必須ですが、入力されていない場合がありますので入力します。
+	* 他の項目も必要に応じて入力します。
 
 ### iOS用設定
 CFBundleURLTypes属性を`ios/Runner/Info.plist`に追加します。
@@ -130,13 +137,60 @@ SignInScreen(
 
 # Sign in with Apple
 [公式ドキュメント](https://github.com/firebase/FirebaseUI-Flutter/blob/main/docs/firebase-ui-auth/providers/oauth.md#sign-in-with-apple)
-とりあえずApple端末でのみの設定です。
 
 ```bash
 flutter pub add firebase_ui_oauth_apple
 ```
 
 ### Firebaseの設定
+Firebaseのコンソール上でAuthenticationのログインプロバイダにAppleを追加します。
+* Android/Webでも有効にするには設定が必要です。下の項目で説明します。
+* Darwin向けにはFirebase上の設定は特にありません。
+
+### Android/Webの設定
+Firebaseの設定に必要なのは4つあります。
+手順は長いので折りたたみますが、ポチポチするだけです。
+:::message
+firebaseにカスタムドメインを設定している方も`<your-firebase-project-id>.firebaseapp.com`で設定する必要があり、変更の仕方はわかりませんでした😢
+:::
+* Sign in with Apple用のServiceID
+	::::details ServiceIDの取得
+	1. Certificates, Identifiers & Profilesの[Identifiers](https://developer.apple.com/account/resources/identifiers/list/serviceId)にアクセスします。
+	1. `+`ボタンをクリックしてServiceIDを作成します。`description`と`identifier`を入力して作成を完了します。
+		* `description`はログイン画面にサービス名として表示される名前になります。
+			![](/images/sign_in_with_apple.png)
+		![](/images/apple_developer_certificates_identifier_service_id.png)
+	1. 今作成したServiceIDが一覧にあると思うのでそれをクリックします。
+	1. `Sign In with Apple`にチェックを入れて`Configure`をクリックします。
+		1. `Primary App ID`には今回紐づけるアプリのBundle IDを入力します。
+		1. `Domains and Subdomains`には`<your-firebase-project-id>.firebaseapp.com`を入力します。
+		1. `Return URLs`には`https://<your-firebase-project-id>.firebaseapp.com/__/auth/handler`を入力します。これはFirebaseコンソールでAppleのプロバイダ設定をする際にコピーできます。
+			:::message
+			カスタムドメインを設定している方も`<your-firebase-project-id>.firebaseapp.com`で設定する必要があり、変更の仕方はわかりませんでした😢
+			:::
+			![](/images/apple_developer_certificates_identifier_service_id_configure.png)
+	1. 設定が終わったら`Continue` → `Save`で設定を保存します。
+	1. 先ほど設定したServiceIDをFirebaseのコンソールのAppleのプロバイダ設定に追加すれば完了です。
+	::::
+* Team ID → [こちら](https://developer.apple.com/account#membership-details)で確認
+* Key ID と 秘密鍵
+	:::details 作成方法
+	> 既にPush通知用などで秘密鍵を持っている場合はそれを使っても構いません。
+
+	1. 今度はCertificates, Identifiers & Profilesの[Keys](https://developer.apple.com/account/resources/authkeys/list)にアクセスします。
+	1. `+`ボタンをクリックして`Key`を作成します。
+		1. `Key Name`に任意の名前を入力します。
+		1. `Sign in with Apple`にチェックを入れます。
+		1. `Configure`から`Primary App ID`に今回紐づけるアプリのBundle IDを選択します。
+		1. 戻って`Continue` → `Register`で設定を完了します。
+		1. Keyを`Download`します。1度しかできないので安全な場所にバックアップしておきます。
+		1. また、`Key ID`が作られるのでこれもメモします。
+	:::
+
+用意できたらFirebaseコンソールに戻り、Appleのプロバイダ設定に`OAuth コードフローの構成（省略可）`に追加してください。
+省略可ありますが、AndroidとWebで使うには必要です。
+
+### iOSの設定
 1. Xcode上でSign in with Appleを有効にします。
 ```bash
 open ios/Runner.xcworkspace
@@ -153,7 +207,15 @@ SignInScreen(
   ],
 );
 ```
-
+<!--
+### 匿名メールアドレスの転送設定
+登録に利用されるランダムなメールアドレスとやりとり出来るメールアドレスやドメインを設定します。
+1. Certificates, Identifiers & Profilesの[Services](https://developer.apple.com/account/resources/services/list)から`Sign in with Apple for Email Communication`の`Configure`をクリックします。
+1. `+`ボタンをクリックして`Email Domain`を追加します。
+	1. `Domain`にはやり取りしたいメールアドレスのドメインがあれば入力します。
+	1. `Email Address`に`noreply@<your-firebase-project-id>.firebaseapp.com`か[カスタム](https://zenn.dev/wake/articles/firebase-auth-with-custom-domain#a.-メールアドレスをカスタマイズ)している場合はそれを入力します。
+		![](/images/apple_developer_certificates_services_email_communication.png)
+-->
 ---
 
 # 関連記事
