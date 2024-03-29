@@ -8,8 +8,10 @@ published: true
 
 # はじめに
 独自ドメインを取得したらメールアドレスも作りたいですよね。  
-色々調べたらZoho Mailが良さそうだったので紹介します。  
+色々調べたら[Zoho Mail](https://www.zoho.com/mail)が良さそうだったので紹介します。  
 また、メールだけでなく、カレンダーやメモやタスクドライブなども使えるので、小規模なチームのGoogle Workspaceの代替としてもおすすめです。  
+
+若干わかりづらいサインアップは[こちら](https://mail.zoho.jp/signup)
 
 # 欲しかった機能
 
@@ -29,10 +31,20 @@ published: true
 [さくらのメールボックス](https://rs.sakura.ad.jp/mail/) | 86円/月~ | ❌? | 10個まで | 〇 | ❌[対応予定](https://www.sakura.ad.jp/corporate/information/announcements/2023/12/19/1968214527/) | 〇 | 〇
 [Zoho Mail](https://www.zoho.com/jp/mail/zohomail-pricing.html) | 無料~<br>(120円/User/月~) | 上限不明 | 〇 | 〇 | 〇 | 〇 | 〇
 
-Zoho Mailは5人まで無料で使えます。  
+Zoho Mailのフリープランは5人まで使えます。また、登録できるドメインは1つまでです  
 また、iCloud+に登録していれば、独自ドメインのメールアドレスを作れますが、1つのドメインに対して3つまでしかアドレスを作れませんでした。  
 
-# 便利だと思ったこと
+# 実際の画面
+![](/images/zoho_mail_dashboard.png)
+
+モダンで見やすく使いやすいです。
+左にある「グループ」というのを作ればメーリングリスト兼チャットグループみたいになります。
+細かい権限設定も色々できそうです。
+
+また、Googleのサービスよろしくアプリも充実していて、ログイン用のアプリまであってログインが楽なのが地味に嬉しいです。
+[デスクトップ向けのアプリ](https://www.zoho.com/mail/desktop/)もあるのはGoogle超え…？
+
+# その他、便利だと思ったこと
 ### Gmailのようなエイリアス
 Gmailでは`user+<文字列>@gmail.com`というアドレスを使うと、`user@gmail.com`に届くので、エイリアスとして色々便利に使えます。  
 Zohoでも同様なことができます。
@@ -47,3 +59,5 @@ Google Chatのようにチャットもできます。
 # 結論
 5人までは無料でGoogle Workspaceの代替のように使えるので、小規模なチームであればおすすめです。  
 サーバー借りようか、AmazonSESで無理やり構築しようか、と模索していたので非常にありがたかったです。  
+
+Zoho推せます！頑張れ！
