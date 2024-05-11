@@ -11,7 +11,7 @@ published: true
 色々調べたら[Zoho Mail](https://www.zoho.com/mail)が良さそうだったので紹介します。  
 また、メールだけでなく、カレンダーやメモやタスクドライブなども使えるので、小規模なチームのGoogle Workspaceの代替としてもおすすめです。  
 
-若干わかりづらいサインアップは[こちら](https://mail.zoho.jp/signup)
+若干わかりづらいサインアップページは[こちら](https://mail.zoho.jp/signup)
 
 # 欲しかった機能
 
@@ -32,7 +32,7 @@ published: true
 [Zoho Mail](https://www.zoho.com/jp/mail/zohomail-pricing.html) | 無料~<br>(120円/User/月~) | 上限不明 | 〇 | 〇 | 〇 | 〇 | 〇
 
 Zoho Mailのフリープランは5人まで使えます。また、登録できるドメインは1つまでです  
-また、iCloud+に登録していれば、独自ドメインのメールアドレスを作れますが、1つのドメインに対して3つまでしかアドレスを作れませんでした。  
+他にもiCloud+で独自ドメインのメールアドレスを作れますが、1つのドメインに対して3つまでしかアドレスを作れませんでした。  
 
 # 実際の画面
 ![](/images/zoho_mail_dashboard.png)
